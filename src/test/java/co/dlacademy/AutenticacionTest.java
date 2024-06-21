@@ -59,7 +59,7 @@ public class AutenticacionTest {
 
         //ACT
         driver.findElement(By.id("login_text")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        driver.findElement(By.id("login_passwordas")).sendKeys(password);
 
         //ASSERT
         assertEquals("LOGIN", driver.findElement(By.id("login_btn")).getText());
