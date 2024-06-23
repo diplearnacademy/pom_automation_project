@@ -11,63 +11,51 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AutenticacionTest {
-
-    WebDriver driver;
-
-    @BeforeEach
-    public void configuracionInicial(){
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
-
     @Test
-    public void AutenticacionOrange(){
-        //IMPLEMENTACION CON SELENIUM USANDO DRIVER
-        //System.setProperties("webdriver.chrome.driver", "C://tools//chromedriver.exe");
+    public void AutenticacionOrange() {
 
-        //ARRANGE
-        String username = "test";
-        String password = "test123";
-        //WebDriver driver = new ChromeDriver();
-        //driver.manage().window().maximize();
+        //Arrange
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://www.automationtesting.co.uk/loginPortal.html");
 
-        WebElement inputUsername = driver.findElement(By.id("login_text"));
-        WebElement inputPassword = driver.findElement(By.id("login_password"));
+        WebElement inputUsername = driver.findElement(By.xpath("//input[@placeholder='Username']"));
+        WebElement inputPassword = driver.findElement(By.xpath("//input[@placeholder='Password']"));
         WebElement buttonLogin = driver.findElement(By.id("login_btn"));
 
-        //ACT
-        inputUsername.sendKeys(username);
-        inputPassword.sendKeys(password);
+        //Act
+        inputUsername.sendKeys("test");
+        inputPassword.sendKeys("test123");
+        buttonLogin.click();
 
-        //ASSERT
-        assertEquals("LOGIN", buttonLogin.getText());
-        //driver.close();
+
+        //Assert
+        assertEquals("LOGIN",buttonLogin.getText());
+        driver.close(); // cierra instancia
+        //driver.quit(); //cierra todas las intancias.
     }
 
     @Test
-    public void AutenticacionOrangeDos(){
-        //IMPLEMENTACION CON SELENIUM USANDO DRIVER
-        //System.setProperties("webdriver.chrome.driver", "C://tools//chromedriver.exe");
+    public void AutenticacionOrangeDos() {
 
-        //ARRANGE
-        String username = "test";
-        String password = "test123";
-        //WebDriver driver = new ChromeDriver();
-        //driver.manage().window().maximize();
+        //Arrange
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://www.automationtesting.co.uk/loginPortal.html");
 
-        //ACT
-        driver.findElement(By.id("login_text")).sendKeys(username);
-        driver.findElement(By.id("login_password")).sendKeys(password);
+        WebElement inputUsername = driver.findElement(By.xpath("//input[@placeholder='Username']"));
+        WebElement inputPassword = driver.findElement(By.xpath("//input[@placeholder='Password']"));
+        WebElement buttonLogin = driver.findElement(By.id("login_btn"));
 
-        //ASSERT
-        assertEquals("LOGIN", driver.findElement(By.id("login_btn")).getText());
-        //driver.close();
-    }
+        //Act
+        inputUsername.sendKeys("test");
+        inputPassword.sendKeys("test123");
+        buttonLogin.click();
 
-    @AfterEach
-    public void configuracionFinal(){
-        driver.close();
+
+        //Assert
+        assertEquals("LOGIN",buttonLogin.getText());
+        driver.close(); // cierra instancia
+        //driver.quit(); //cierra todas las intancias.
     }
 }
