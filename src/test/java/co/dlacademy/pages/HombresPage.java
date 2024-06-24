@@ -10,25 +10,22 @@ import java.time.Duration;
 
 public class HombresPage extends PageObject {
     WebDriver driver;
-
     By checkBoxBuzos = By.xpath("//input[@id='category-3-buzos']");
     By imgBuzoHombre = By.xpath("//img[@alt='Buzo Hoodie Marfil Oso']/..");
+    By spinner = By.xpath("//svg[contains(@class, 'icon-spinner')]");
 
     public HombresPage(WebDriver driver){
         this.driver = driver;
     }
 
+    public static void waitForSpinner(WebDriver driver, By spinnerCssSelector, Duration timeoutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(spinnerCssSelector));
+    }
+
     public void seleccionarCategoriaBuzos(){
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        ///wait.until(ExpectedConditions.elementToBeClickable(checkBoxBuzos));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        if(driver.findElement(checkBoxBuzos).isDisplayed()){
-            driver.findElement(checkBoxBuzos).click();
-        }else{
-            System.out.println("Hola");
-        }
-
-
+        waitForSpinner(driver, spinner, Duration.ofSeconds(4));
+        driver.findElement(checkBoxBuzos).click();
     }
 
     public void seleccionarBuzo(){

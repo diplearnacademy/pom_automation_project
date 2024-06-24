@@ -1,3 +1,8 @@
+# Generated files
+bin/
+gen/
+out/
+
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -38,5 +43,16 @@ bin/
 ### VS Code ###
 .vscode/
 
-### Mac OS ###
+# ignore files target
+target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Mac
 .DS_Store
+
+# Maven
+log/
