@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AutenticacionTest {
+
     WebDriver driver;
 
     @BeforeEach
@@ -20,21 +21,28 @@ public class AutenticacionTest {
     }
 
     @Test
-    public void AutenticacionOrange() {
+    public void AutenticacionOrange(){
+        //IMPLEMENTACION CON SELENIUM USANDO DRIVER
+        //System.setProperties("webdriver.chrome.driver", "C://tools//chromedriver.exe");
+
+        //ARRANGE
+        String username = "test";
+        String password = "test123";
+        //WebDriver driver = new ChromeDriver();
+        //driver.manage().window().maximize();
         driver.get("https://www.automationtesting.co.uk/loginPortal.html");
 
-        WebElement inputUsername = driver.findElement(By.xpath("//input[@placeholder='Username']"));
-        WebElement inputPassword = driver.findElement(By.xpath("//input[@placeholder='Password']"));
+        WebElement inputUsername = driver.findElement(By.id("login_text"));
+        WebElement inputPassword = driver.findElement(By.id("login_password"));
         WebElement buttonLogin = driver.findElement(By.id("login_btn"));
 
-        //Act
-        inputUsername.sendKeys("test");
-        inputPassword.sendKeys("test123");
-        buttonLogin.click();
+        //ACT
+        inputUsername.sendKeys(username);
+        inputPassword.sendKeys(password);
 
-
-        //Assert
-        assertEquals("LOGIN",buttonLogin.getText());
+        //ASSERT
+        assertEquals("LOGIN", buttonLogin.getText());
+        //driver.close();
     }
 
     @Test
@@ -45,6 +53,8 @@ public class AutenticacionTest {
         //ARRANGE
         String username = "test";
         String password = "test123";
+        //WebDriver driver = new ChromeDriver();
+        //driver.manage().window().maximize();
         driver.get("https://www.automationtesting.co.uk/loginPortal.html");
 
         //ACT
@@ -53,6 +63,7 @@ public class AutenticacionTest {
 
         //ASSERT
         assertEquals("LOGIN", driver.findElement(By.id("login_btn")).getText());
+        //driver.close();
     }
 
     @AfterEach
