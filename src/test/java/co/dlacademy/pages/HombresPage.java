@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HombresPage extends PageObject {
+public class HombresPage extends BasePage {
     WebDriver driver;
     By checkBoxBuzos = By.xpath("//input[@id='category-3-buzos']");
-    By imgBuzoHombre = By.xpath("//img[@alt='Buzo Hoodie Marfil Oso']/..");
+    String imgBuzoHombre = "//img[@alt='COMODIN']/..";
     By spinner = By.xpath("//svg[contains(@class, 'icon-spinner')]");
 
     public HombresPage(WebDriver driver){
@@ -28,8 +28,8 @@ public class HombresPage extends PageObject {
         driver.findElement(checkBoxBuzos).click();
     }
 
-    public void seleccionarBuzo(){
-        driver.findElement(imgBuzoHombre).click();
+    public void seleccionarBuzo(String nombreArticulo){
+        driver.findElement(setParametro(imgBuzoHombre, nombreArticulo)).click();
     }
 
 }

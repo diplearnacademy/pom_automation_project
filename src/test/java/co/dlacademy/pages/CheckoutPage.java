@@ -32,12 +32,12 @@ public class CheckoutPage extends PageObject {
         driver.findElement(buttonProcederPago).click();
     }
 
-    public void escribirCorreo() {
-        driver.findElement(inputCorreo).sendKeys("juan@juan.com");
+    public void escribirCorreo(String correo) {
+        driver.findElement(inputCorreo).sendKeys(correo);
     }
 
-    public void escribirNombre() {
-        driver.findElement(inputNombre).sendKeys("Juan");
+    public void escribirNombre(String nombre) {
+        driver.findElement(inputNombre).sendKeys(nombre);
     }
 
     public void escribirApellido() {

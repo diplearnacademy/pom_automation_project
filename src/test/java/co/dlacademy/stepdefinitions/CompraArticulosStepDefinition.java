@@ -4,11 +4,16 @@ import co.dlacademy.pages.ArticulosPage;
 import co.dlacademy.pages.CheckoutPage;
 import co.dlacademy.pages.HombresPage;
 import co.dlacademy.pages.HomePage;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.fluentlenium.core.annotation.Page;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class CompraArticulosStepDefinition {
 
@@ -29,32 +34,35 @@ public class CompraArticulosStepDefinition {
         homePage.open();
     }
 
-    @And("el filtra la categoria que desea")
-    public void elFiltraLaCategoriaQueDesea() {
-        homePage.clickEnCategoriaHombre();
-        hombresPage.seleccionarCategoriaBuzos();
-
+    @Given("que Juan se encuentra en la pagina principal")
+    public void queJuanSeEncuentraEnLaPaginaPrincipal() {
+        homePage.open();
     }
 
-    @When("seleccione el articulo")
-    public void seleccioneElArticulo() {
-        hombresPage.seleccionarBuzo();
+    @And("el filtra la categoria {word}")
+    public void elFiltraLaCategoriaQueDesea(String categoria) {
+        homePage.seleccionarCategoria(categoria);
+        hombresPage.seleccionarCategoriaBuzos();
+    }
+
+    @When("seleccione el articulo {string}")
+    public void seleccioneElArticuloBuzo(String nombreArticulo) {
+        hombresPage.seleccionarBuzo(nombreArticulo);
     }
 
     @And("diligencia la informacion requerida")
-    public void diligenciaLaInformacionRequerida() throws InterruptedException {
+    public void diligenciaLaInformacionRequerida(List<Map<String, String>> infoUsuario) {
         articulosPage.seleccionarTalla();
         articulosPage.agregarAlCarrito();
         articulosPage.abrirCarritoDeCompras();
         checkoutPage.procederPago();
-        checkoutPage.escribirCorreo();
-        checkoutPage.escribirNombre();
+        checkoutPage.escribirCorreo(infoUsuario.get(0).get("correo"));
+        checkoutPage.escribirNombre(infoUsuario.get(0).get("nombre"));
         checkoutPage.escribirApellido();
         checkoutPage.escribirCelular();
         checkoutPage.seleccionarTipoDocumento();
         checkoutPage.escribirNumeroDoc();
         checkoutPage.irParaEntrega();
-        //Thread.sleep(10000);
     }
 
     @Then("los datos diligenciados son correctos")

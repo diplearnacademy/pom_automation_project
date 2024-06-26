@@ -6,17 +6,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @DefaultUrl("https://www.mattelsa.net/")
-public class HomePage extends PageObject {
+public class HomePage extends BasePage {
 
     WebDriver driver;
-    By botonCategoriaHombre = By.xpath("//div[contains(@class,'slider-principal')]//a[contains(.,'Hombre')]");
+    String botonCategoriaHombre = "//div[contains(@class,'slider-principal')]//a[contains(.,'COMODIN')]";
 
     public HomePage(WebDriver driver){
         this.driver = driver;
     }
 
-    public void clickEnCategoriaHombre(){
-      driver.findElement(botonCategoriaHombre).click();
+    public void seleccionarCategoria(String categoria){
+      driver.findElement(setParametro(botonCategoriaHombre, categoria)).click();
     }
-
 }

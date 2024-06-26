@@ -11,7 +11,6 @@ import java.time.Duration;
 
 public class ArticulosPage extends PageObject {
     WebDriver driver;
-
     By tallaArticulo = By.xpath("//span[contains(.,'Talla')]/..//following-sibling::div//div[@role='button' and contains(.,'M')]");
     By buttonAgregarCarrito = By.xpath("//span[contains(.,'Agregar a la bolsa')]");
     By linkAbrirCarrito = By.xpath("//a[@href='/checkout/#/cart']");
