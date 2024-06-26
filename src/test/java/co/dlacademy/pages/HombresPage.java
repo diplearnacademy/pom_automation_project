@@ -18,7 +18,7 @@ public class HombresPage extends PageObject {
         this.driver = driver;
     }
 
-    public static void waitForSpinner(WebDriver driver, By spinnerCssSelector, Duration timeoutInSeconds) {
+    private static void waitForSpinner(WebDriver driver, By spinnerCssSelector, Duration timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(spinnerCssSelector));
     }

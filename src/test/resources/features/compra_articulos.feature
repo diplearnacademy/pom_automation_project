@@ -8,4 +8,4 @@ Feature: Compra de articulos en Mattelsa
     And el filtra la categoria que desea
     When seleccione el articulo
     And diligencia la informacion requerida
-    Then la compra sera exitosa
+    Then los datos diligenciados son correctos

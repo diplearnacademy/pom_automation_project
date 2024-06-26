@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 public class HomePage extends PageObject {
 
     WebDriver driver;
-    By botonCategoriaHombre = By.xpath("//div[contains(@class,'mattelsa-slider')]//a[@href='/hombre']");
+    By botonCategoriaHombre = By.xpath("//div[contains(@class,'slider-principal')]//a[contains(.,'Hombre')]");
 
     public HomePage(WebDriver driver){
         this.driver = driver;
