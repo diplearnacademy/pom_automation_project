@@ -1,3 +1,8 @@
+# Generated files
+bin/
+gen/
+out/
+
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -8,6 +13,8 @@ build/
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
+.idea/gradle.xml
+.idea/misc.xml
 .idea/libraries/
 *.iws
 *.iml
@@ -38,5 +45,17 @@ bin/
 ### VS Code ###
 .vscode/
 
-### Mac OS ###
+# ignore files target
+target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Mac
 .DS_Store
+
+# Maven
+log/
+/.idea/workspace.xml
