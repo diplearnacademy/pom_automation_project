@@ -20,7 +20,7 @@ Feature: Compra de articulos en Mattelsa
 
 
   @Pending
-  Scenario:Comprar Buzo para hombre exitoso
+  Scenario:Comprar camisa para hombre exitoso
     Given que Juan se encuentra en la pagina principal
     And el filtra la categoria Hombre
     When seleccione el articulo "Buzo Hoodie Marfil Oso"
@@ -32,7 +32,7 @@ Feature: Compra de articulos en Mattelsa
   @Pending
   Scenario:Comprar articulo para hombre exitoso
     Given que el usuario se encuentra en la pagina principal
-    #And el filtra la categoria que desea
-    When seleccione el articulo
+    And el filtra la categoria Hombre
+    When seleccione el articulo "Buzo Hoodie Marfil Oso"
     And diligencia la informacion requerida
     Then los datos diligenciados son correctos
