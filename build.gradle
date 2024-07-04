@@ -31,6 +31,6 @@ test {
     systemProperties System.getProperties()
 }
 
-gradle.startParameter.continueOnFailure =true
-
 test.finalizedBy(aggregate)
+
+gradle.startParameter.continueOnFailure =true
