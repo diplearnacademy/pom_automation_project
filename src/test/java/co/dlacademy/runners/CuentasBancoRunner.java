@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberSerenityRunner.class)
 @CucumberOptions(
-        features = "src/test/resources/features/libreria.feature",
+        features = "src/test/resources/features/cuentas_banco.feature",
         glue = "co.dlacademy.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class LibreriaRunner {
+public class CuentasBancoRunner {
 }
