@@ -5,45 +5,72 @@ import org.openqa.selenium.support.FindBy;
 
 public class RegistroPage extends BasePage{
 
-
     @FindBy(id = "customer.firstName")
-    WebElementFacade inputName;
-
+    WebElementFacade inputNombre;
 
     @FindBy(id = "customer.lastName")
-    WebElementFacade inputName;
+    WebElementFacade inputApellido;
 
+    @FindBy(id = "customer.address.street")
+    WebElementFacade inputDireccion;
 
-    @FindBy(id = "customer.firstName")
-    WebElementFacade inputName;
+    @FindBy(id = "customer.address.city")
+    WebElementFacade inputCiudad;
 
+    @FindBy(id = "customer.address.state")
+    WebElementFacade inputEstado;
 
-    @FindBy(id = "customer.firstName")
-    WebElementFacade inputName;
+    @FindBy(id = "customer.address.zipCode")
+    WebElementFacade inputPostal;
 
+    @FindBy(id = "customer.phoneNumber")
+    WebElementFacade inputTelefono;
 
-    @FindBy(id = "customer.firstName")
-    WebElementFacade inputName;
+    @FindBy(id = "customer.ssn")
+    WebElementFacade inputSsnId;
 
+    @FindBy(id = "customer.username")
+    WebElementFacade inputApodo;
 
-    @FindBy(id = "customer.firstName")
-    WebElementFacade inputName;
+    @FindBy(id = "customer.password")
+    WebElementFacade inputClave;
 
+    @FindBy(id = "repeatedPassword")
+    WebElementFacade inputClaveRepetida;
 
-    @FindBy(id = "customer.firstName")
-    WebElementFacade inputName;
+    @FindBy(xpath = "//input[@value='Register']")
+    WebElementFacade botonRegistrar;
 
+    public void ingresarNombre(){
+        inputNombre.type("Juan");
+    }
 
-    @FindBy(id = "customer.firstName")
-    WebElementFacade inputName;
+    public void ingresarApellido(){
+        inputApellido.type("Fernandez");
+    }
 
+    public void ingresarDireccion(){
+        inputDireccion.type("Cll 77");
+    }
 
-    @FindBy(id = "customer.firstName")
-    WebElementFacade inputName;
+    public void ingresarCiudad(){
+        inputCiudad.type("Sabaneta");
+    }
 
+    public void ingresarEstado(){
+        inputEstado.type("Antioquia");
+    }
 
-    @FindBy(id = "customer.firstName")
-    WebElementFacade inputName;
+    public void ingresarPostal(){
+        inputPostal.type("002200");
+    }
 
+    public void ingresarTelefono(){
+        inputTelefono.type("323232323");
+    }
+
+    public void ingresarSsnId(){
+        inputSsnId.type("ABC");
+    }
 
 }
