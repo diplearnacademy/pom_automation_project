@@ -16,6 +16,7 @@ public class HomeStep {
 
     @Step
     public void abrirRegistroBanco(){
+        homePage.maximizarNavegador();
         homePage.open();
         homePage.abrirPaginaRegistro();
     }

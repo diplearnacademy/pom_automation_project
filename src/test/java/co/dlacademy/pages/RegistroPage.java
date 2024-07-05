@@ -1,9 +1,12 @@
 package co.dlacademy.pages;
 
+import co.dlacademy.utils.GeneradorDatos;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.FindBy;
 
 public class RegistroPage extends BasePage{
+
+    GeneradorDatos generadorDatos = new GeneradorDatos();
 
     @FindBy(id = "customer.firstName")
     WebElementFacade inputNombre;
@@ -71,6 +74,22 @@ public class RegistroPage extends BasePage{
 
     public void ingresarSsnId(){
         inputSsnId.type("ABC");
+    }
+
+    public void ingresarApodo(){
+        inputApodo.type(generadorDatos.generarApodoBanco());
+    }
+
+    public void ingresarClave(){
+        inputClave.type("juantest123");
+    }
+
+    public void ingresarClaveRepetida(){
+        inputClaveRepetida.type("juantest123");
+    }
+
+    public void clickParaRegistrarUsuario(){
+        botonRegistrar.click();
     }
 
 }

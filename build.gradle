@@ -25,6 +25,7 @@ dependencies {
     testImplementation "net.serenity-bdd:serenity-junit5:${serenityVersion}"
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation 'org.assertj:assertj-core:3.26.0'
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
 }
 
 test {

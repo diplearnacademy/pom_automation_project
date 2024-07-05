@@ -2,7 +2,6 @@ package co.dlacademy.steps;
 
 import co.dlacademy.pages.RegistroPage;
 import net.serenitybdd.annotations.Step;
-import net.serenitybdd.annotations.Steps;
 import org.fluentlenium.core.annotation.Page;
 
 public class RegistroStep {
@@ -20,5 +19,9 @@ public class RegistroStep {
         registroPage.ingresarPostal();
         registroPage.ingresarTelefono();
         registroPage.ingresarSsnId();
+        registroPage.ingresarApodo();
+        registroPage.ingresarClave();
+        registroPage.ingresarClaveRepetida();
+        registroPage.clickParaRegistrarUsuario();
     }
 }
