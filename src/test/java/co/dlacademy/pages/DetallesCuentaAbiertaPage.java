@@ -9,8 +9,9 @@ public class DetallesCuentaAbiertaPage extends BasePage{
     @FindBy(id="newAccountId")
     WebElementFacade linkNuevaCuentaAbierta;
 
-    public void obtenerNumeroCuenta() throws InterruptedException {
-        linkNuevaCuentaAbierta.waitUntilVisible();
+    public void obtenerNumeroCuenta(){
+        linkNuevaCuentaAbierta.waitUntilPresent().waitUntilVisible();
+        ///linkNuevaCuentaAbierta.waitUntilVisible();
         String numeroCuentaWebelement = linkNuevaCuentaAbierta.getText();
         Serenity.setSessionVariable("numeroCuenta").to(numeroCuentaWebelement);
     }

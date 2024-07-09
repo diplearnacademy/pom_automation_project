@@ -16,7 +16,7 @@ public class AbrirNuevaCuentaPage extends BasePage{
     }
 
     public void clickAbrirNuevaCuenta(){
-        botonAbrirNuevaCuenta.waitUntilClickable();
+        botonAbrirNuevaCuenta.waitUntilEnabled().waitUntilClickable();
         botonAbrirNuevaCuenta.click();
     }
 }
