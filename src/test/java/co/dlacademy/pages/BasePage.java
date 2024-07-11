@@ -7,7 +7,6 @@ public class BasePage extends PageObject {
 
     public void maximizarNavegador(){
         getDriver().manage().window().maximize();
-        getDriver().manage().window().maximize();
     }
 
     public void cambiarIframe(WebElementFacade frame){
