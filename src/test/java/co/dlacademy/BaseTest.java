@@ -22,7 +22,7 @@ public class BaseTest {
                 driver = new EdgeDriver();
                 break;
             default:
-                throw new IllegalArgumentException("Unsupported browser: " + driverType);
+                throw new IllegalArgumentException("Unsupported browser, Check parameter you sent: " + driverType);
         }
 
         String environment = InitialConfiguration.get("environment");

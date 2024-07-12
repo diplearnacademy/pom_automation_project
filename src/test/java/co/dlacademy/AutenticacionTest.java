@@ -34,6 +34,6 @@ public class AutenticacionTest extends BaseTest{
 
     @AfterEach
     public void configuracionFinal(){
-        driver.quit();
+        tearDown();
     }
 }
