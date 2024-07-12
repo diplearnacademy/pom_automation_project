@@ -17,4 +17,6 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    systemProperty "environment", System.getProperty("environment", "qa")
+    systemProperty "driver", System.getProperty("driver", "chrome")
 }
