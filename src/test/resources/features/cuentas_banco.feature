@@ -3,7 +3,7 @@ Feature: Aperturar Cuentas de Ahorro
   Quiero aperturar una cuenta de ahorros
   Para hacer envio de dinero
 
-
+  @example
   Scenario Outline: Abrir cuenta de ahorros para usuarios no registrados
     Given que el usuario esta en la pagina del banco
     And realiza el registro como nuevo usuario
